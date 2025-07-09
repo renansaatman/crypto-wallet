@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Mining types" %>
+
+<h1>Mining types</h1>
+
+<div id="mining_types">
+  <% @mining_types.each do |mining_type| %>
+    <%= render mining_type %>
+    <p>
+      <%= link_to t("links.show"), mining_type %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to t("links.new"), new_mining_type_path %>

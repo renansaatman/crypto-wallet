@@ -2,17 +2,25 @@
 
 <% content_for :title, "Coins" %>
 
-<h1>Moedas</h1>
-<h2><%= cookies[:curso] %></h2>
-<h2><%= session[:name] %></h2>
+<h1><%= Coin.model_name.human(count: @coins.count) %></h1>
 
-<div id="coins">
-  <% @coins.each do |coin| %>
-    <%= render coin %>
-    <p>
-      <%= link_to t("links.show"), coin %>
-    </p>
-  <% end %>
-</div>
+<table id="coins" class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"><%= @coins.human_attribute_name(:description) %></th>
+      <th scope="col"><%= @coins.human_attribute_name(:acronym) %></th>
+      <th scope="col"><%= @coins.human_attribute_name(:url_image) %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @coins.each do |coin| %>
+      <tr>
+        <%= render coin %>
+        <td><%= link_to t("links.show"), coin %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<%= link_to t("links.new"), new_coin_path %>
+<%= link_to t("links.new"), new_coin_path, class: "btn btn-primary" %>

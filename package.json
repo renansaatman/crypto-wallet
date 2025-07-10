@@ -1,0 +1,14 @@
+{
+  "name": "crypto_wallet",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/renansaatman/crypto-wallet.git",
+  "author": "renansaatman <renansaatman@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "4.1.3",
+    "jquery": "^3.7.1",
+    "notify-js-legacy": "^0.4.1",
+    "popper.js": "^1.16.1"
+  }
+}

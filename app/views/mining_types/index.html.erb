@@ -2,15 +2,21 @@
 
 <% content_for :title, "Mining types" %>
 
-<h1>Mining types</h1>
+<h1><%= MiningType.model_name.human(count: @mining_types.count) %></h1>
 
-<div id="mining_types">
-  <% @mining_types.each do |mining_type| %>
-    <%= render mining_type %>
-    <p>
-      <%= link_to t("links.show"), mining_type %>
-    </p>
-  <% end %>
-</div>
+<table id="mining_types" class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"><%= @mining_types.human_attribute_name(:description) %></th>
+      <th scope="col"><%= @mining_types.human_attribute_name(:acronym) %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @mining_types.each do |mining_type| %>
+      <%= render mining_type %>
+    <% end %>
+  </tbody>
+</table>
 
-<%= link_to t("links.new"), new_mining_type_path %>
+<%= link_to t("links.new"), new_mining_type_path, class: "btn btn-primary" %>

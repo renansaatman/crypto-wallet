@@ -28,7 +28,11 @@
 #       enabled: "ON"
 
 en:
+  welcome: "Welcome!"
   hello: "Hello world"
+  messages:
+    welcome: "This is Crypto Wallet, an app for you to register and keep up with your cryptocoins."
+    menu: "To start, choose an option below:"
   links:
     edit: "Edit"
     show: "Show"

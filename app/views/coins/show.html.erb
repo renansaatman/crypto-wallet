@@ -1,10 +1,26 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @coin %>
+
+<table id="coins" class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"><%= Coin.human_attribute_name(:description) %></th>
+      <th scope="col"><%= Coin.human_attribute_name(:acronym) %></th>
+      <th scope="col"><%= Coin.human_attribute_name(:url_image) %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <%= render @coin %>
+    </tr>
+  </tbody>
+</table>
+
 
 <div>
-  <%= link_to t("links.edit"), edit_coin_path(@coin) %> |
-  <%= link_to t("links.back"), coins_path %>
+  <%= link_to t("links.edit"), edit_coin_path(@coin), class: "btn btn-primary" %>
+  <%= link_to t("links.back"), coins_path, class: "btn btn-primary" %>
 
-  <%= button_to t("links.delete"), @coin, method: :delete %>
+  <%= button_to t("links.delete"), @coin, method: :delete, form: { class: "d-inline" }, class: "btn btn-danger" %>
 </div>

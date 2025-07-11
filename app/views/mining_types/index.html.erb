@@ -14,9 +14,14 @@
   </thead>
   <tbody>
     <% @mining_types.each do |mining_type| %>
-      <%= render mining_type %>
+      <tr>
+        <%= render mining_type %>
+        <td><%= link_to t("links.show"), mining_type %></td>
+      </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to t("links.new"), new_mining_type_path, class: "btn btn-primary" %>
+<%= link_to t("links.new.mining_type"), new_mining_type_path, class: "btn btn-primary" %>
+<%= link_to t("links.back"), root_path, class: "btn btn-primary" %>
+

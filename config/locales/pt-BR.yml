@@ -8,6 +8,8 @@ pt-BR:
     edit: "Editar"
     show: "Mostrar"
     delete: "Apagar"
-    new: "Novo"
+    new:
+      coin: "Nova Moeda"
+      mining_type: "Novo Tipo de Mineração"
     back: "Voltar"
   current_locale: "Português (Brasil)"

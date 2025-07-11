@@ -1,22 +1,23 @@
 <p style="color: green"><%= notice %></p>
 
-
-<table id="coins" class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col"><%= Coin.human_attribute_name(:description) %></th>
-      <th scope="col"><%= Coin.human_attribute_name(:acronym) %></th>
-      <th scope="col"><%= Coin.human_attribute_name(:url_image) %></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <%= render @coin %>
-    </tr>
-  </tbody>
-</table>
-
+<form>
+  <div class="form-group">
+    <%= label_tag nil, @coin.class.human_attribute_name(:description) %>
+    <%= text_field_tag nil, @coin.description, class:"form-control", disabled: true %>
+  </div>
+  <div class="form-group">
+    <%= label_tag nil, @coin.class.human_attribute_name(:acronym) %>
+    <%= text_field_tag nil, @coin.acronym, class:"form-control", disabled: true %>
+  </div>
+  <div class="form-group">
+    <%= label_tag nil, @coin.class.human_attribute_name(:url_image) %>
+    <%= text_field_tag nil, @coin.url_image, class:"form-control", disabled: true %>
+  </div>
+  <div class="form-group">
+    <%= label_tag nil, @coin.class.human_attribute_name(:mining_type) %>
+    <%= text_field_tag nil, @coin.mining_type.description, class:"form-control", disabled: true %>
+  </div>
+</form>
 
 <div>
   <%= link_to t("links.edit"), edit_coin_path(@coin), class: "btn btn-primary" %>
